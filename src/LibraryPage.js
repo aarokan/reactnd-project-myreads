@@ -4,9 +4,20 @@ import { Link } from 'react-router-dom'
 import BookShelf from './BookShelf'
 
 class LibraryPage extends React.Component {
+    shelves = [
+        { key: 'currentlyReading', category: 'currentlyReading', title: 'Currently Reading' },
+        { key: 'wantToRead', category: 'wantToRead', title: 'Want to Read' },
+        { key: 'read', category: 'read', title: 'read' },
+    ];
+
     render() {
-        console.log(this.props);
-        return(
+        // Map through shelves array to create the 3 BookShelf
+        const bookShelves = this.shelves.map((shelf) => (
+            <BookShelf key={shelf.key} category={shelf.category} title={shelf.title} books={this.props.books} />
+            ) 
+        );
+        
+        return (
             <div>
                 <div className="list-books">
                     <div className="list-books-title">
@@ -14,7 +25,7 @@ class LibraryPage extends React.Component {
                     </div>
                         <div className="list-books-content">
                             <div>
-                                <BookShelf />
+                                {bookShelves}
                             </div>
                         </div>
                     <div className="open-search">
