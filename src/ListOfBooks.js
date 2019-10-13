@@ -25,7 +25,7 @@ class ListOfBooks extends React.Component {
                         </div>
                     </li>
                 )
-            }
+            } 
         });
 
         return (

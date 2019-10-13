@@ -10,17 +10,6 @@ class LibraryPage extends React.Component {
         { key: 'read', category: 'read', title: 'read' },
     ];  
     
-    clickCurrentlyReading = () => {
-        this.props.onUpdateBook(this.props.books[0], 'currentlyReading')
-            //.then((res) => this.props.onUpdateBook);
-    };
-
-    clickWantToRead = () => {
-        this.props.onUpdateBook(this.props.books[0], 'wantToRead');
-    };
-
-
-
     render() {
         // Map through shelves array to create the 3 BookShelf
         const bookShelves = this.shelves.map((shelf) => (
@@ -34,11 +23,8 @@ class LibraryPage extends React.Component {
             ) 
         );
         
-
         return (
             <div>
-                <button onClick={this.clickCurrentlyReading}>currentlyReading</button>
-                <button onClick={this.clickWantToRead}>wantToRead</button>
                 <div className="list-books">
                     <div className="list-books-title">
                         <h1>MyReads</h1>

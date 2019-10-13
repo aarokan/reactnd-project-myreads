@@ -3,7 +3,7 @@ import './App.css'
 
 class ShelfChanger extends React.Component {
     handleChange = event => {
-        this.props.onUpdateBook(this.props.category, this.props.book, event.target.value);
+        this.props.onUpdateBook(this.props.book, event.target.value);
     };
 
     render() {
